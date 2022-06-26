@@ -1,3 +1,5 @@
+// ignore_for_file: dead_code, no_leading_underscores_for_local_identifiers
+
 import 'package:clothes_shop_firebase/services/utils.dart';
 import 'package:clothes_shop_firebase/widgets/on_sale_widget.dart';
 import 'package:clothes_shop_firebase/widgets/text_widget.dart';
@@ -66,7 +68,7 @@ class OnSaleScreen extends StatelessWidget {
               //crossAxisSpacing: 10,
               childAspectRatio: size.width / (size.height * 0.60),
               children: List.generate(4, (index) {
-                return OnSaleWidget();
+                return const OnSaleWidget();
               }),
             ),
     );

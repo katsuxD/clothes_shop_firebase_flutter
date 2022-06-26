@@ -1,3 +1,5 @@
+// ignore_for_file: unnecessary_nullable_for_final_variable_declarations
+
 import 'package:clothes_shop_firebase/services/utils.dart';
 import 'package:clothes_shop_firebase/widgets/feed_items.dart';
 import 'package:clothes_shop_firebase/widgets/text_widget.dart';
@@ -19,6 +21,7 @@ class _FeedsScreensState extends State<FeedsScreens> {
   void dispose() {
     _searchTextController!.dispose();
     _searchTextFocusNode.dispose();
+    // ignore: todo
     // TODO: implement dispose
     super.dispose();
   }

@@ -15,10 +15,11 @@ class CartegoryWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final themeState = Provider.of<DarkThemeProvider>(context);
-    double _screenWidth = MediaQuery.of(context).size.width;
+    double screenWidth = MediaQuery.of(context).size.width;
     final Color color = themeState.getDarkTheme ? Colors.white : Colors.black;
     return InkWell(
       onTap: () {
+        // ignore: avoid_print
         print("Category presses");
       },
       child: Container(
@@ -32,8 +33,8 @@ class CartegoryWidget extends StatelessWidget {
         ),
         child: Column(children: [
           Container(
-            height: _screenWidth * 0.3,
-            width: _screenWidth * 0.3,
+            height: screenWidth * 0.3,
+            width: screenWidth * 0.3,
             decoration: BoxDecoration(
               image: DecorationImage(
                 image: AssetImage(

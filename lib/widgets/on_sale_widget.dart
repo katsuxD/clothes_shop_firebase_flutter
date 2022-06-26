@@ -4,10 +4,9 @@ import 'package:clothes_shop_firebase/widgets/price_widget.dart';
 import 'package:clothes_shop_firebase/widgets/text_widget.dart';
 import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_iconly/flutter_iconly.dart';
 
 class OnSaleWidget extends StatefulWidget {
-  OnSaleWidget({Key? key}) : super(key: key);
+  const OnSaleWidget({Key? key}) : super(key: key);
 
   @override
   State<OnSaleWidget> createState() => _OnSaleWidgetState();
@@ -17,7 +16,6 @@ class _OnSaleWidgetState extends State<OnSaleWidget> {
   @override
   Widget build(BuildContext context) {
     final Color color = Utils(context).color;
-    final theme = Utils(context).getTheme;
     Size size = Utils(context).getScreenSize;
     return Padding(
       padding: const EdgeInsets.all(8.0),
@@ -56,7 +54,7 @@ class _OnSaleWidgetState extends State<OnSaleWidget> {
                             salePrice: 2.99,
                             textPrice: "1",
                           ),
-                          SizedBox(width: 8,),
+                          const SizedBox(width: 8,),
                           const HeartBTN(),
                         ],
                       ),

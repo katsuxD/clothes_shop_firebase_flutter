@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:card_swiper/card_swiper.dart';
 import 'package:clothes_shop_firebase/inner_screens/feed_screen.dart';
 import 'package:clothes_shop_firebase/inner_screens/on_sale_screen.dart';
@@ -28,7 +30,6 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     final Color color = Utils(context).color;
     final Utils utils = Utils(context);
-    final themState = utils.getTheme;
     final Size size = utils.getScreenSize;
 
     return Scaffold(

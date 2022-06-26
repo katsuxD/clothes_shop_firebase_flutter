@@ -3,9 +3,14 @@ import 'package:clothes_shop_firebase/widgets/categories_widget.dart';
 import 'package:clothes_shop_firebase/widgets/text_widget.dart';
 import 'package:flutter/material.dart';
 
-class CategoriesScreen extends StatelessWidget {
-  CategoriesScreen({Key? key}) : super(key: key);
+class CategoriesScreen extends StatefulWidget {
+  const CategoriesScreen({Key? key}) : super(key: key);
 
+  @override
+  State<CategoriesScreen> createState() => _CategoriesScreenState();
+}
+
+class _CategoriesScreenState extends State<CategoriesScreen> {
   List<Color> gridColors = [
     const Color(0xff53B175),
     const Color(0xffF8A44C),
@@ -41,6 +46,7 @@ class CategoriesScreen extends StatelessWidget {
       'catText': 'Áo thun',
     },
   ];
+
   @override
   Widget build(BuildContext context) {
     final utils = Utils(context);

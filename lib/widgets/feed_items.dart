@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 class FeedsWidget extends StatefulWidget {
+  // ignore: prefer_const_constructors_in_immutables
   FeedsWidget({Key? key}) : super(key: key);
 
   @override
@@ -47,7 +48,7 @@ class _FeedsWidgetState extends State<FeedsWidget> {
               width: size.width * 0.32,
               boxFit: BoxFit.fill,
             ),
-            SizedBox(height: 6.5,),
+            const SizedBox(height: 6.5,),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 30),
               child: Row(

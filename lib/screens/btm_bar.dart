@@ -1,4 +1,4 @@
-// ignore_for_file: unused_field
+// ignore_for_file: unused_field, no_leading_underscores_for_local_identifiers
 
 import 'package:clothes_shop_firebase/provider/dark_theme_provider.dart';
 import 'package:clothes_shop_firebase/screens/cart.dart';
@@ -20,7 +20,7 @@ class _BottomBarScreenState extends State<BottomBarScreen> {
   int _selectedIndex = 0;
   final List<Map<String, dynamic>> _pages = [
     {"page" : const HomePage(), "title" : "Trang chủ"},
-    {"page" :  CategoriesScreen(), "title" : "Danh mục sản phẩm"},
+    {"page" :  const CategoriesScreen(), "title" : "Danh mục sản phẩm"},
     {"page" : const CartScreen(), "title" : "Giỏ hàng"},
     {"page" : const UserScreen(), "title" : "Thiết lập người dùng"},
   ];
