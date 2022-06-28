@@ -140,8 +140,9 @@ class _HomePageState extends State<HomePage> {
               physics: const NeverScrollableScrollPhysics(),
               crossAxisCount: 2,
               padding: EdgeInsets.zero,
-              //crossAxisSpacing: 10,
-              childAspectRatio:size.width / (size.height * 0.59),
+              crossAxisSpacing: 9,
+              mainAxisSpacing: 9,
+              childAspectRatio:0.667,
               children: List.generate(4, (index) {
                 return FeedsWidget();
               }),
