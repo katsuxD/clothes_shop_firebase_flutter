@@ -2,6 +2,7 @@
 
 import 'package:clothes_shop_firebase/services/utils.dart';
 import 'package:clothes_shop_firebase/widgets/on_sale_widget.dart';
+import 'package:clothes_shop_firebase/widgets/on_sale_widget2.dart';
 import 'package:clothes_shop_firebase/widgets/text_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
@@ -65,10 +66,11 @@ class OnSaleScreen extends StatelessWidget {
               physics: const NeverScrollableScrollPhysics(),
               crossAxisCount: 2,
               padding: EdgeInsets.zero,
-              //crossAxisSpacing: 10,
-              childAspectRatio: size.width / (size.height * 0.60),
+              //crossAxisSpacing: 8,
+              mainAxisSpacing: 8,
+              childAspectRatio: size.width / (size.height * 0.58),
               children: List.generate(4, (index) {
-                return const OnSaleWidget();
+                return const OnSaleWidget2();
               }),
             ),
     );

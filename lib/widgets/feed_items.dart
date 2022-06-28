@@ -154,17 +154,18 @@ class _FeedsWidgetState extends State<FeedsWidget> {
               TextButton(
                 onPressed: () {},
                 style: ButtonStyle(
-                    backgroundColor:
-                        MaterialStateProperty.all(Theme.of(context).cardColor),
-                    tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                      const RoundedRectangleBorder(
-                        borderRadius: BorderRadius.only(
-                          bottomLeft: Radius.circular(12.0),
-                          bottomRight: Radius.circular(12.0),
-                        ),
-                      ),
-                    )),
+                  backgroundColor:
+                      MaterialStateProperty.all(Theme.of(context).cardColor),
+                  tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                    const RoundedRectangleBorder(
+                      // borderRadius: BorderRadius.only(
+                      //   bottomLeft: Radius.circular(12.0),
+                      //   bottomRight: Radius.circular(12.0),
+                      // ),
+                    ),
+                  ),
+                ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [

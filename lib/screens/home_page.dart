@@ -37,7 +37,7 @@ class _HomePageState extends State<HomePage> {
         child: Column(
           children: [
             SizedBox(
-              height: size.height / 4, //size.height *0.33
+              height: size.height / 3, //size.height *0.33
               child: Swiper(
                 itemBuilder: (BuildContext context, int index) {
                   return Image.asset(
