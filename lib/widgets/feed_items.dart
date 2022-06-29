@@ -1,3 +1,5 @@
+import 'package:clothes_shop_firebase/inner_screens/product_details.dart';
+import 'package:clothes_shop_firebase/services/global_method.dart';
 import 'package:clothes_shop_firebase/services/utils.dart';
 import 'package:clothes_shop_firebase/widgets/price_widget.dart';
 import 'package:clothes_shop_firebase/widgets/text_widget.dart';
@@ -36,7 +38,10 @@ class _FeedsWidgetState extends State<FeedsWidget> {
       borderRadius: BorderRadius.circular(12),
       color: Theme.of(context).cardColor,
       child: InkWell(
-        onTap: () {},
+        onTap: () {
+          GlobalMethods.navigateTo(
+              ctx: context, routeName: ProductDetails.routeName);
+        },
         borderRadius: BorderRadius.circular(12),
         child: Column(children: [
           Padding(

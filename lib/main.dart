@@ -3,6 +3,7 @@
 import 'package:clothes_shop_firebase/const/theme_data.dart';
 import 'package:clothes_shop_firebase/inner_screens/feed_screen.dart';
 import 'package:clothes_shop_firebase/inner_screens/on_sale_screen.dart';
+import 'package:clothes_shop_firebase/inner_screens/product_details.dart';
 import 'package:clothes_shop_firebase/provider/dark_theme_provider.dart';
 import 'package:clothes_shop_firebase/screens/btm_bar.dart';
 import 'package:flutter/material.dart';
@@ -56,6 +57,7 @@ class _MyAppState extends State<MyApp> {
           routes: {
             OnSaleScreen.routeName: (context) => const OnSaleScreen(),
             FeedsScreens.routeName: (context) => const FeedsScreens(),
+            ProductDetails.routeName: (context) => const ProductDetails(),
           },
         );
       }),
