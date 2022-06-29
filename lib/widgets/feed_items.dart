@@ -1,5 +1,4 @@
 import 'package:clothes_shop_firebase/services/utils.dart';
-import 'package:clothes_shop_firebase/widgets/heart_btn.dart';
 import 'package:clothes_shop_firebase/widgets/price_widget.dart';
 import 'package:clothes_shop_firebase/widgets/text_widget.dart';
 import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
@@ -159,11 +158,11 @@ class _FeedsWidgetState extends State<FeedsWidget> {
                   tapTargetSize: MaterialTapTargetSize.shrinkWrap,
                   shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                     const RoundedRectangleBorder(
-                      // borderRadius: BorderRadius.only(
-                      //   bottomLeft: Radius.circular(12.0),
-                      //   bottomRight: Radius.circular(12.0),
-                      // ),
-                    ),
+                        // borderRadius: BorderRadius.only(
+                        //   bottomLeft: Radius.circular(12.0),
+                        //   bottomRight: Radius.circular(12.0),
+                        // ),
+                        ),
                   ),
                 ),
                 child: Row(

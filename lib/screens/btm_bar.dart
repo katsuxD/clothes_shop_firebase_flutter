@@ -1,7 +1,7 @@
 // ignore_for_file: unused_field, no_leading_underscores_for_local_identifiers
 
 import 'package:clothes_shop_firebase/provider/dark_theme_provider.dart';
-import 'package:clothes_shop_firebase/screens/cart.dart';
+import 'package:clothes_shop_firebase/screens/cart/cart_screen.dart';
 import 'package:clothes_shop_firebase/screens/categories.dart';
 import 'package:clothes_shop_firebase/screens/home_page.dart';
 import 'package:clothes_shop_firebase/screens/user.dart';
@@ -19,10 +19,10 @@ class BottomBarScreen extends StatefulWidget {
 class _BottomBarScreenState extends State<BottomBarScreen> {
   int _selectedIndex = 0;
   final List<Map<String, dynamic>> _pages = [
-    {"page" : const HomePage(), "title" : "Trang chủ"},
-    {"page" :  const CategoriesScreen(), "title" : "Danh mục sản phẩm"},
-    {"page" : const CartScreen(), "title" : "Giỏ hàng"},
-    {"page" : const UserScreen(), "title" : "Thiết lập người dùng"},
+    {"page": const HomePage(), "title": "Trang chủ"},
+    {"page": const CategoriesScreen(), "title": "Danh mục sản phẩm"},
+    {"page": const CartScreen(), "title": "Giỏ hàng"},
+    {"page": const UserScreen(), "title": "Thiết lập người dùng"},
   ];
   void _selectedPage(int index) {
     setState(() {
@@ -57,14 +57,14 @@ class _BottomBarScreenState extends State<BottomBarScreen> {
               label: "Home",
             ),
             BottomNavigationBarItem(
-              icon: Icon(_selectedIndex == 1
-                  ? IconlyBold.category
-                  : IconlyLight.category),
-              label: "Category"
-            ),
+                icon: Icon(_selectedIndex == 1
+                    ? IconlyBold.category
+                    : IconlyLight.category),
+                label: "Category"),
             BottomNavigationBarItem(
-              icon:
-                  Icon(_selectedIndex == 2 ? IconlyBold.buy : IconlyLight.buy,),
+              icon: Icon(
+                _selectedIndex == 2 ? IconlyBold.buy : IconlyLight.buy,
+              ),
               label: "Cart",
             ),
             BottomNavigationBarItem(
