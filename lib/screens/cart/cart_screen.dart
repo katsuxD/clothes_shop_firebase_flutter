@@ -1,4 +1,8 @@
+// ignore_for_file: no_leading_underscores_for_local_identifiers
+
 import 'package:clothes_shop_firebase/screens/cart/cart_widget.dart';
+import 'package:clothes_shop_firebase/widgets/empty_screen.dart';
+import 'package:clothes_shop_firebase/services/global_method.dart';
 import 'package:clothes_shop_firebase/services/utils.dart';
 import 'package:clothes_shop_firebase/widgets/text_widget.dart';
 import 'package:flutter/material.dart';
@@ -10,39 +14,55 @@ class CartScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final Color color = Utils(context).color;
-    return Scaffold(
-      appBar: AppBar(
-        elevation: 0,
-        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-        title: TextWidget(
-          color: color,
-          text: "Cart (2)",
-          isTitle: true,
-          textSize: 22,
-        ),
-        actions: [
-          IconButton(
-            onPressed: () {},
-            icon: Icon(
-              IconlyLight.delete,
-              color: color,
+    bool _isEmpty = true;
+    if (_isEmpty == true) {
+      return const EmptyScreen(
+        imagePath: 'assets/images/cart.png',
+        title: 'Mua gì ik (┬┬﹏┬┬)',
+        subtitle: 'Chưa có sản phẩm nào trong giỏ hàng',
+        buttonText: 'Mua sắm ngay',
+      );
+    } else {
+      return Scaffold(
+        appBar: AppBar(
+          elevation: 0,
+          backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+          title: TextWidget(
+            color: color,
+            text: "Cart (2)",
+            isTitle: true,
+            textSize: 22,
+          ),
+          actions: [
+            IconButton(
+              onPressed: () {
+                GlobalMethods.warningDialog(
+                    title: "Xóa hết sản phẩm",
+                    subtitle: "Bạn chắc chưa ಠ_ಠ?",
+                    fct: () {},
+                    context: context);
+              },
+              icon: Icon(
+                IconlyLight.delete,
+                color: color,
+              ),
             ),
-          ),
-        ],
-      ),
-      body: Column(
-        children: [
-          _checkout(ctx: context),
-          Expanded(
-            child: ListView.builder(
-                itemCount: 10,
-                itemBuilder: (context, index) {
-                  return const CartWidget();
-                }),
-          ),
-        ],
-      ),
-    );
+          ],
+        ),
+        body: Column(
+          children: [
+            _checkout(ctx: context),
+            Expanded(
+              child: ListView.builder(
+                  itemCount: 10,
+                  itemBuilder: (context, index) {
+                    return const CartWidget();
+                  }),
+            ),
+          ],
+        ),
+      );
+    }
   }
 
   Widget _checkout({required BuildContext ctx}) {

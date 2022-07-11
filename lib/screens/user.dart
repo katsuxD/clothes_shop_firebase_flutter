@@ -1,4 +1,8 @@
 import 'package:clothes_shop_firebase/provider/dark_theme_provider.dart';
+import 'package:clothes_shop_firebase/screens/orders/orders_screen.dart';
+import 'package:clothes_shop_firebase/screens/viewed_recently/viewed_recently.dart';
+import 'package:clothes_shop_firebase/screens/wishlist/wishlist_screen.dart';
+import 'package:clothes_shop_firebase/services/global_method.dart';
 import 'package:clothes_shop_firebase/widgets/text_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
@@ -92,13 +96,20 @@ class _UserScreenState extends State<UserScreen> {
               _listTile(
                   title: "Đặt hàng",
                   icon: IconlyLight.bag,
-                  onPressed: (onPressed) {},
+                  onPressed: () {
+                    GlobalMethods.navigateTo(
+                        ctx: context, routeName: OrdersScreen.routeName);
+                  },
                   color: color),
               _listTile(
-                  title: "Món hàng yêu thích",
-                  icon: IconlyLight.heart,
-                  onPressed: (onPressed) {},
-                  color: color),
+                title: "Món hàng yêu thích",
+                icon: IconlyLight.heart,
+                onPressed: () {
+                  GlobalMethods.navigateTo(
+                      ctx: context, routeName: WishlistScreen.routeName);
+                },
+                color: color,
+              ),
               _listTile(
                   title: "Quản lý mật khẩu",
                   icon: IconlyLight.password,
@@ -107,7 +118,11 @@ class _UserScreenState extends State<UserScreen> {
               _listTile(
                   title: "Món hàng đã xem",
                   icon: IconlyLight.show,
-                  onPressed: (onPressed) {},
+                  onPressed: () {
+                    GlobalMethods.navigateTo(
+                        ctx: context,
+                        routeName: ViewedRecentlyScreen.routeName);
+                  },
                   color: color),
               SwitchListTile(
                 title: TextWidget(
@@ -129,8 +144,12 @@ class _UserScreenState extends State<UserScreen> {
               _listTile(
                 title: "Đăng xuất",
                 icon: IconlyLight.logout,
-                onPressed: () async {
-                  await _showLogoutdialog();
+                onPressed: () {
+                  GlobalMethods.warningDialog(
+                      title: "Đăng xuất",
+                      subtitle: "Bạn có chắc muốn đăng xuất",
+                      fct: () {},
+                      context: context);
                 },
                 color: color,
               )
@@ -162,50 +181,6 @@ class _UserScreenState extends State<UserScreen> {
                 onPressed: () {},
                 child: const Text("Update"),
               )
-            ],
-          );
-        });
-  }
-
-  Future<void> _showLogoutdialog() async {
-    await showDialog(
-        context: context,
-        builder: (context) {
-          return AlertDialog(
-            title: Row(children: [
-              Image.asset(
-                'assets/images/warning-sign.png',
-                height: 20,
-                width: 20,
-                fit: BoxFit.fill,
-              ),
-              const SizedBox(
-                width: 8,
-              ),
-              const Text("Đăng xuất"),
-            ]),
-            content: const Text("Bạn có muốn đăng xuất?"),
-            actions: [
-              TextButton(
-                onPressed: () {
-                  if (Navigator.canPop(context)) {
-                    Navigator.pop(context);
-                  }
-                },
-                child: TextWidget(
-                  color: Colors.cyan,
-                  text: "Hủy",
-                  textSize: 18,
-                ),
-              ),
-              TextButton(
-                onPressed: () {},
-                child: TextWidget(
-                  color: Colors.red,
-                  text: "Đồng ý",
-                  textSize: 18,
-                ),
-              ),
             ],
           );
         });

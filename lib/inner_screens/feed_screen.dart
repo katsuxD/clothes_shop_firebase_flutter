@@ -1,10 +1,10 @@
 // ignore_for_file: unnecessary_nullable_for_final_variable_declarations
 
 import 'package:clothes_shop_firebase/services/utils.dart';
+import 'package:clothes_shop_firebase/widgets/back_widget.dart';
 import 'package:clothes_shop_firebase/widgets/feed_items.dart';
 import 'package:clothes_shop_firebase/widgets/text_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_iconly/flutter_iconly.dart';
 
 class FeedsScreens extends StatefulWidget {
   static const routeName = "/FeedsScreenState";
@@ -31,16 +31,7 @@ class _FeedsScreensState extends State<FeedsScreens> {
     final Color color = Utils(context).color;
     return Scaffold(
       appBar: AppBar(
-        leading: InkWell(
-          borderRadius: BorderRadius.circular(12),
-          onTap: () {
-            Navigator.pop(context);
-          },
-          child: Icon(
-            IconlyLight.arrowLeft2,
-            color: color,
-          ),
-        ),
+        leading: const BackWidget(),
         elevation: 0,
         backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         title: TextWidget(

@@ -5,7 +5,13 @@ import 'package:clothes_shop_firebase/inner_screens/feed_screen.dart';
 import 'package:clothes_shop_firebase/inner_screens/on_sale_screen.dart';
 import 'package:clothes_shop_firebase/inner_screens/product_details.dart';
 import 'package:clothes_shop_firebase/provider/dark_theme_provider.dart';
-import 'package:clothes_shop_firebase/screens/btm_bar.dart';
+import 'package:clothes_shop_firebase/screens/auth/forget_pass.dart';
+import 'package:clothes_shop_firebase/screens/auth/login.dart';
+import 'package:clothes_shop_firebase/screens/auth/register.dart';
+
+import 'package:clothes_shop_firebase/screens/orders/orders_screen.dart';
+import 'package:clothes_shop_firebase/screens/viewed_recently/viewed_recently.dart';
+import 'package:clothes_shop_firebase/screens/wishlist/wishlist_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -53,11 +59,19 @@ class _MyAppState extends State<MyApp> {
           debugShowCheckedModeBanner: false,
           title: 'Flutter Demo',
           theme: Styles.themeData(themeProvider.getDarkTheme, context),
-          home: const BottomBarScreen(),
+          home: const LoginScreen(),
           routes: {
             OnSaleScreen.routeName: (context) => const OnSaleScreen(),
             FeedsScreens.routeName: (context) => const FeedsScreens(),
             ProductDetails.routeName: (context) => const ProductDetails(),
+            WishlistScreen.routeName: (context) => const WishlistScreen(),
+            OrdersScreen.routeName: (context) => const OrdersScreen(),
+            ViewedRecentlyScreen.routeName: (context) =>
+                const ViewedRecentlyScreen(),
+            LoginScreen.routeName: (context) => const LoginScreen(),
+            ForgetPasswordScreen.routeName: (context) =>
+                const ForgetPasswordScreen(),
+            RegisterScreen.routeName: (context) => const RegisterScreen(),
           },
         );
       }),

@@ -1,10 +1,10 @@
 // ignore_for_file: dead_code, no_leading_underscores_for_local_identifiers
 
 import 'package:clothes_shop_firebase/services/utils.dart';
+import 'package:clothes_shop_firebase/widgets/back_widget.dart';
 import 'package:clothes_shop_firebase/widgets/on_sale_widget2.dart';
 import 'package:clothes_shop_firebase/widgets/text_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_iconly/flutter_iconly.dart';
 
 class OnSaleScreen extends StatelessWidget {
   static const routeName = "/OnSaleScreen";
@@ -17,16 +17,7 @@ class OnSaleScreen extends StatelessWidget {
     Size size = Utils(context).getScreenSize;
     return Scaffold(
       appBar: AppBar(
-        leading: InkWell(
-          borderRadius: BorderRadius.circular(12),
-          onTap: () {
-            Navigator.pop(context);
-          },
-          child: Icon(
-            IconlyLight.arrowLeft2,
-            color: color,
-          ),
-        ),
+        leading: const BackWidget(),
         elevation: 0,
         backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         title: TextWidget(

@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:card_swiper/card_swiper.dart';
+import 'package:clothes_shop_firebase/const/const.dart';
 import 'package:clothes_shop_firebase/inner_screens/feed_screen.dart';
 import 'package:clothes_shop_firebase/inner_screens/on_sale_screen.dart';
 import 'package:clothes_shop_firebase/services/global_method.dart';
@@ -20,12 +21,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  final List<String> _offerImages = [
-    "assets/images/offres/Offer1.jpg",
-    "assets/images/offres/Offer2.jpg",
-    "assets/images/offres/Offer3.jpg",
-    "assets/images/offres/Offer4.jpg"
-  ];
+  
   @override
   Widget build(BuildContext context) {
     final Color color = Utils(context).color;
@@ -41,11 +37,11 @@ class _HomePageState extends State<HomePage> {
               child: Swiper(
                 itemBuilder: (BuildContext context, int index) {
                   return Image.asset(
-                    _offerImages[index],
+                    Consts.offerImages[index],
                     fit: BoxFit.fill,
                   );
                 },
-                itemCount: _offerImages.length,
+                itemCount: Consts.offerImages.length,
                 pagination: const SwiperPagination(
                   alignment: Alignment.bottomCenter,
                   builder: DotSwiperPaginationBuilder(

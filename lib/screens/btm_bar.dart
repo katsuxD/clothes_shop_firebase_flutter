@@ -1,5 +1,6 @@
 // ignore_for_file: unused_field, no_leading_underscores_for_local_identifiers
 
+import 'package:badges/badges.dart';
 import 'package:clothes_shop_firebase/provider/dark_theme_provider.dart';
 import 'package:clothes_shop_firebase/screens/cart/cart_screen.dart';
 import 'package:clothes_shop_firebase/screens/categories.dart';
@@ -17,7 +18,7 @@ class BottomBarScreen extends StatefulWidget {
 }
 
 class _BottomBarScreenState extends State<BottomBarScreen> {
-  int _selectedIndex = 0;
+  int _selectedIndex = 3;
   final List<Map<String, dynamic>> _pages = [
     {"page": const HomePage(), "title": "Trang chủ"},
     {"page": const CategoriesScreen(), "title": "Danh mục sản phẩm"},
@@ -62,8 +63,24 @@ class _BottomBarScreenState extends State<BottomBarScreen> {
                     : IconlyLight.category),
                 label: "Category"),
             BottomNavigationBarItem(
-              icon: Icon(
-                _selectedIndex == 2 ? IconlyBold.buy : IconlyLight.buy,
+              icon: Badge(
+                toAnimate: false,
+                shape: BadgeShape.circle,
+                badgeColor: Colors.blue,
+                borderRadius: BorderRadius.circular(8),
+                position: BadgePosition.topEnd(
+                  top: -10,
+                  end: -7,
+                ),
+                badgeContent: const FittedBox(
+                  child: Text(
+                    "1",
+                    style: TextStyle(color: Colors.white),
+                  ),
+                ),
+                child: Icon(
+                  _selectedIndex == 2 ? IconlyBold.buy : IconlyLight.buy,
+                ),
               ),
               label: "Cart",
             ),

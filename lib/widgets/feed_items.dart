@@ -126,8 +126,12 @@ class _FeedsWidgetState extends State<FeedsWidget> {
                           keyboardType: TextInputType.number,
                           maxLines: 1,
                           enabled: true,
-                          onChanged: (valueee) {
-                            setState(() {});
+                          onChanged: (value) {
+                            setState(() {
+                              if (value.isEmpty) {
+                                _quantityTextController.text = '1';
+                              } else {}
+                            });
                           },
                           inputFormatters: [
                             FilteringTextInputFormatter.allow(

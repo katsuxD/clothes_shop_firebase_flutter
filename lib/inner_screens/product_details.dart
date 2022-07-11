@@ -223,7 +223,8 @@ class _ProductDetailsState extends State<ProductDetails> {
                       ],
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(top: 30.0, left: 30, right: 30),
+                      padding:
+                          const EdgeInsets.only(top: 30.0, left: 30, right: 30),
                       child: TextWidget(
                         text:
                             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
@@ -272,7 +273,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                                     isTitle: true,
                                   ),
                                   TextWidget(
-                                    text: '${_quantityTextController.text}Kg',
+                                    text: '${_quantityTextController.text}Sl',
                                     color: color,
                                     textSize: 16,
                                     isTitle: false,
