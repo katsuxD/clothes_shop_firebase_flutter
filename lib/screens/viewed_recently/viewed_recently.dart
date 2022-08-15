@@ -20,7 +20,7 @@ class ViewedRecentlyScreen extends StatefulWidget {
 }
 
 class _ViewedRecentlyScreenState extends State<ViewedRecentlyScreen> {
-  bool check = true;
+  bool check = false;
   @override
   Widget build(BuildContext context) {
     Color color = Utils(context).color;

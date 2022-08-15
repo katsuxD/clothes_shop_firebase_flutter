@@ -14,7 +14,7 @@ class CartScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final Color color = Utils(context).color;
-    bool _isEmpty = true;
+    bool _isEmpty = false;
     if (_isEmpty == true) {
       return const EmptyScreen(
         imagePath: 'assets/images/cart.png',

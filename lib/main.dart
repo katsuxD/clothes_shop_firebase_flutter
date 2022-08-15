@@ -1,5 +1,4 @@
 // ignore_for_file: prefer_const_constructors_in_immutables
-
 import 'package:clothes_shop_firebase/const/theme_data.dart';
 import 'package:clothes_shop_firebase/inner_screens/feed_screen.dart';
 import 'package:clothes_shop_firebase/inner_screens/on_sale_screen.dart';
@@ -8,6 +7,8 @@ import 'package:clothes_shop_firebase/provider/dark_theme_provider.dart';
 import 'package:clothes_shop_firebase/screens/auth/forget_pass.dart';
 import 'package:clothes_shop_firebase/screens/auth/login.dart';
 import 'package:clothes_shop_firebase/screens/auth/register.dart';
+import 'package:clothes_shop_firebase/screens/btm_bar.dart';
+import 'package:clothes_shop_firebase/screens/home_page.dart';
 
 import 'package:clothes_shop_firebase/screens/orders/orders_screen.dart';
 import 'package:clothes_shop_firebase/screens/viewed_recently/viewed_recently.dart';
@@ -47,6 +48,11 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
+        // ChangeNotifierProvider(
+        //   create: (_) {
+        //     return MenuController();
+        //   },
+        // ),
         ChangeNotifierProvider(
           create: (_) {
             return themeChangeProvider;
@@ -59,7 +65,7 @@ class _MyAppState extends State<MyApp> {
           debugShowCheckedModeBanner: false,
           title: 'Flutter Demo',
           theme: Styles.themeData(themeProvider.getDarkTheme, context),
-          home: const LoginScreen(),
+          home: const BottomBarScreen(),
           routes: {
             OnSaleScreen.routeName: (context) => const OnSaleScreen(),
             FeedsScreens.routeName: (context) => const FeedsScreens(),
